@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Extracted Text Display</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f2f5;
+            margin: 0;
+            padding: 20px;
+            color: #424242;
+        }
+        .container {
+            background-color: white;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            text-align: center;
+            width: 80%;
+            max-width: 800px;
+            margin: auto;
+        }
+        h1, h2 {
+            color: #1a237e;
+        }
+        div {
+            text-align: left;
+            background-color: #e3f2fd;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        .score {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .reasoning {
+            font-size: 16px;
+            margin-top: 20px;
+        }
+        button {
+            background-color: #5c6bc0;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 16px;
+            margin-top: 20px;
+        }
+        button:hover {
+            background-color: #3949ab;
+        }
+        p.small {
+            margin-top: 10px;
+            color: #666;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Resume and Job Matching Results</h1>
+        <div class="score">Match Score: {{ score }}</div>
+        <div class="reasoning">{{ reasoning }}</div>
+        <button onclick="window.location='/'">Start Over</button>
+        <p class="small">Start over with a new applicant</p>
+    </div>
+</body>
+</html>

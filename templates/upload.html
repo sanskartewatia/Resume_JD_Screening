@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload PDFs</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f2f5;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background-color: white;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            text-align: center;
+            width: 400px;
+        }
+        h1 {
+            color: #1a237e;
+        }
+        p {
+            color: #424242;
+        }
+        input[type="file"], input[type="submit"] {
+            border: 1px solid #ccc;
+            padding: 10px;
+            width: 100%;
+            margin-top: 8px;
+            border-radius: 4px;
+        }
+        input[type="submit"] {
+            background-color: #5c6bc0;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 16px;
+            margin-top: 20px;
+        }
+        input[type="submit"]:hover {
+            background-color: #3949ab;
+        }
+        #loading {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(240, 242, 245, 0.85); /* Increased translucence */
+            color: #5c6bc0;
+            text-align: center;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px; /* Larger font size */
+            z-index: 1000;
+        }
+        .loading-box {
+            padding: 20px;
+            border-radius: 8px;
+            background-color: white;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+    </style>
+</head>
+<body>
+    <div id="loading">
+        <div class="loading-box">Processing...</div>
+    </div>
+    <div class="container">
+        <h1>Resume Analysis Portal</h1>
+        <p>Please note that this tool will accept only PDF files.</p>
+        <form method="post" enctype="multipart/form-data" onsubmit="showLoading()">
+            Resume: <input type="file" name="resume" accept=".pdf"><br><br>
+            Job Description: <input type="file" name="job_description" accept=".pdf">
+            <input type="submit" value="Upload">
+        </form>
+    </div>
+    <script>
+        function showLoading() {
+            document.getElementById('loading').style.display = 'flex';
+        }
+    </script>
+</body>
+</html>
