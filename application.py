@@ -35,10 +35,10 @@ def index():
             resume_text, job_desc_text = extract_texts(resume_path, job_desc_path)
             if not resume_text or not job_desc_text:
                 return "Failed to extract text from PDFs.", 500
-            api_key = os.getenv('AZURE_OPENAI_API_KEY')
+            #api_key = os.getenv('AZURE_OPENAI_API_KEY')
             client = AzureOpenAI(
                 azure_endpoint="https://uploadtesting-0504.openai.azure.com/", 
-                api_key=api_key,  
+                api_key="e3c5768d3dd347029304eed9f1cecd9e",  
                 api_version="2024-02-15-preview"
             )
             jdshort, score, reasoning = analyze_documents(client, job_desc_text, resume_text)
