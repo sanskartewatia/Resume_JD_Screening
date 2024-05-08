@@ -1,7 +1,5 @@
 flask
-numpy==1.26.4
 openai==1.25.1
-openapi-schema-pydantic==1.2.4
 pypdf==4.2.0
 gunicorn
 
